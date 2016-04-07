@@ -32,6 +32,7 @@ void salir();
 // Utility functions
 void showEmptyRow(int quantity = 1); 
 void showRow(string message = "", int indentLevel = 0, bool endLine = true);
+void showInConstruction(string);
 string intToString(int);
 int intLength(int);
 int getAgeFromYear(int);
@@ -165,22 +166,19 @@ void getAthleteData() {
 
 void raceTimes() {
   // Actual record 26:17.53
-  showRow("Registro de tiempos de carreras");
-  showEmptyRow();
-  showRow("");
-  
+  showInConstruction("Registro de tiempos de carreras");
 }
 void averageTime() {
-  showRow("Mostrará el tiempo promedio de las carreras");
+  showInConstruction("Tiempo promedio de las carreras");
 }
 void maxAndMinTimes() {
-  showRow("Mostrará el tiempo mínimo y el tiempo máximo de las carreras");
+  showInConstruction("Tiempo mínimo y el tiempo máximo de las carreras");
 }
 void minToMaxTimes() {
-  showRow("Mostrará los tiempos de carreras ordenados de menor a mayor");
+  showInConstruction("Tiempos de carreras ordenados de menor a mayor");
 }
 void racesOnTime() {
-  showRow("Mostrará las carreras que cumplen un tiempo determinado");
+  showInConstruction("Carreras que cumplen un tiempo determinado");
 }
 
 void salir() {
@@ -206,6 +204,12 @@ void showRow(string message, int indentLevel, bool endLine) {
   } else {
     cout << output;
   }
+}
+
+void showInConstruction(string feature = "") {
+  showRow("La funcion " + feature + " se encuentra en construcción");
+  showRow("Esperela pronto...");
+  showEmptyRow();
 }
 
 void showEmptyRow(int quantity) {
